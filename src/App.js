@@ -20,7 +20,7 @@ class App extends Component {
       products: this.state.products.map(item=>{
             if(item.id !==x)return item
              console.log(item.quantity)
-            return {...item, ...item.quantity+1}
+            return {...item, ...item.quantity+=1}
           })
     })
 
