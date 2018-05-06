@@ -1,0 +1,22 @@
+/* src/components/Player.css */
+
+li.list {
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+li.list p {
+  flex: 1;
+  padding: 12px 24px;
+  font-size: 150%;
+}
+
+li.list p.name {
+  font-weight: bold;
+}
+
+li.list p.score {
+  max-width: 50px;
+}
