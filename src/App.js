@@ -6,7 +6,7 @@ import Clock from "react-live-clock"
 
 let total
 const products = [
-  { id: 1, name: "curry", price: 637, quantity: 0 },
+  { id: 1, name: "curry", price: 637, quantity: 1 },
   { id: 2, name: "ketchap", price: 44, quantity: 0 },
   { id: 3, name: "mayo", price: 0.4, quantity: 0 }
 ]
@@ -15,21 +15,31 @@ class App extends Component {
   state = { products, totalChekout: 0 } //state begin
 
   incrementQuantity = x => {
-    //console.log(x)
+      //console.log(x)
     this.setState({
-      products: this.state.products.map(function(item) {
-        if (item.id === x) {
-          //console.log('bam')
-          item.quantity += 1
-          console.log("bingo")
-          return
-          //console.log(item.quantity)
-        } else {
-          item.quantity += 0
-          return
-        }
-      })})
-    return
+      products: this.state.products.map(item=>{
+            if(item.id !==x)return item
+             console.log(item.quantity)
+            return {...item, ...item.quantity+1}
+          })
+    })
+
+    //-----------waarom werkt het niet?
+    // this.setState({
+    //   products: this.state.products.map(function(item) {
+    //     if (item.id === x) {
+    //       //console.log('bam')
+    //       item.quantity += 1
+    //       console.log("bingo")
+    //       return
+    //       //console.log(item.quantity)
+    //     } else {
+    //       item.quantity += 0
+    //       return
+    //     }
+    //   })})
+    //-------------waarom werkt niet?
+
   }   //changing the state only once, afterward error
 
   calcTotal = () => {
